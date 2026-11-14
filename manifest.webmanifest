@@ -1,0 +1,10 @@
+{
+  "name": "FACE/OFF — Air Hockey",
+  "short_name": "FACE/OFF",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111614",
+  "theme_color": "#111614",
+  "icons": [{ "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

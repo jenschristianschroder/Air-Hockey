@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111614">
+  <meta name="description" content="Your screen. Your rink. Play FACE/OFF air hockey solo or go head-to-head with a friend on the same device.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>FACE/OFF — Air Hockey</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="home" class="home">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="Face Off home"><span class="brand-mark">F<span>/</span>O</span><span class="brand-label">AIR HOCKEY<br>CLUB</span></a>
+      <div class="edition"><span class="status-dot"></span> ONE DEVICE. ALL PLAY.</div>
+      <button class="icon-button sound-button" aria-label="Turn sound off" aria-pressed="true" title="Toggle sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4zM16 8c2 2 2 6 0 8M19 5c4 4 4 10 0 14"/></svg></button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="tiny-cross">+</span> THE TABLE IS YOURS</div>
+        <h1>FACE<span class="slash">/</span><br><span class="off">OFF</span><span class="title-dot">●</span></h1>
+        <p class="tagline">Small screen.<br>Big rivalry.</p>
+        <p class="intro">Beat the machine. Or settle it face to face.<br>Fast hands. Sharp angles. One more game.</p>
+        <button class="text-button" id="how-button">How to play <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-label"><span>THE ORIGINAL SCREEN SPORT</span><span>01 / ∞</span></div>
+        <div class="showcase-table">
+          <div class="showcase-rail"></div>
+          <div class="showcase-midline"></div><div class="showcase-circle"></div>
+          <div class="showcase-goal goal-left"></div><div class="showcase-goal goal-right"></div>
+          <div class="showcase-crease crease-left"></div><div class="showcase-crease crease-right"></div>
+          <span class="table-stencil stencil-left">PLAY<br>YOUR<br>SIDE.</span><span class="table-stencil stencil-right">MAKE<br>YOUR<br>SHOT.</span>
+          <div class="demo-paddle demo-green"><i></i></div><div class="demo-paddle demo-orange"><i></i></div>
+          <div class="demo-puck"><i></i></div>
+          <span class="table-corner corner-tl">+</span><span class="table-corner corner-br">+</span>
+        </div>
+        <div class="visual-caption"><span><i class="color-dot green"></i> ONE OR TWO PLAYERS</span><span>NO DOWNLOAD. JUST PLAY. ↙</span></div>
+      </div>
+    </section>
+
+    <section class="setup" aria-label="Match setup">
+      <div class="mode-section">
+        <span class="field-label">01 / PICK YOUR MATCH</span>
+        <div class="mode-switch" role="group" aria-label="Game mode">
+          <button class="mode-option selected" data-mode="solo" aria-pressed="true"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 11h16v13H8zM16 6v5M12 16v3M20 16v3M12 24v3M20 24v3M5 15v6M27 15v6"/></svg><span>SOLO<span class="option-detail">You vs. the machine</span></span><i class="selection-mark"></i></button>
+          <button class="mode-option" data-mode="local" aria-pressed="false"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="10" cy="10" r="4"/><circle cx="23" cy="21" r="4"/><path d="m17 5-5 22M4 22l3 3M26 6l3 3"/></svg><span>FACE TO FACE<span class="option-detail">Two players. One screen.</span></span><i class="selection-mark"></i></button>
+        </div>
+      </div>
+      <div class="tuning-section">
+        <div class="setting-row" id="difficulty-row"><span class="field-label">AI LEVEL</span><div class="chips" role="group" aria-label="AI difficulty"><button data-level="easy" aria-pressed="false">Chill</button><button data-level="normal" class="selected" aria-pressed="true">Quick</button><button data-level="hard" aria-pressed="false">Fierce</button></div></div>
+        <p id="local-hint" class="local-hint" hidden>Take opposite ends.<br>Your half. Your paddle.</p>
+        <div class="setting-row"><span class="field-label">FIRST TO</span><div class="chips score-chips" role="group" aria-label="Goals to win"><button data-goals="5" aria-pressed="false">5</button><button data-goals="7" class="selected" aria-pressed="true">7</button><button data-goals="11" aria-pressed="false">11</button></div></div>
+      </div>
+      <div class="launch-section"><button id="start-button" class="primary-button">DROP THE PUCK <span aria-hidden="true">↗</span></button><span class="launch-note">TOUCH, MOUSE OR KEYBOARD</span></div>
+    </section>
+    <footer class="home-footer"><span>BUILT FOR A LITTLE FRIENDLY COMPETITION.</span><span>FULL-TIME FUN. ZERO OVERTIME.</span></footer>
+  </main>
+
+  <section id="game" class="game" hidden aria-label="Air hockey match">
+    <div id="stage" class="stage">
+      <canvas id="rink" tabindex="0" aria-label="Air hockey rink. Drag in your half to move your paddle. In solo use the arrow keys or WASD. In two-player use WASD for coral and arrow keys for mint."></canvas>
+      <div class="player-hud hud-top"><div class="hud-identity"><span class="color-dot green"></span><span id="top-name">THE MACHINE</span></div><div class="hud-score"><strong id="top-score">0</strong><span>:</span><span id="top-other-score">0</span></div><button class="pause-button" aria-label="Pause match from mint side"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button></div>
+      <div class="player-hud hud-bottom"><div class="hud-identity"><span class="color-dot orange"></span><span id="bottom-name">YOU</span></div><div class="hud-score"><strong id="bottom-score">0</strong><span>:</span><span id="bottom-other-score">0</span></div><button class="pause-button" aria-label="Pause match from coral side"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button></div>
+      <div class="side-mark mark-left">FACE / OFF</div><div id="match-label" class="side-mark mark-right">FIRST TO 7</div>
+      <div id="top-cue" class="player-cue cue-top"><span class="cue-head"></span><span class="cue-detail"></span></div>
+      <div id="bottom-cue" class="player-cue cue-bottom"><span class="cue-head"></span><span class="cue-detail"></span></div>
+    </div>
+    <div id="game-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  </section>
+
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <form method="dialog"><button class="dialog-close icon-button" aria-label="Close instructions">×</button></form>
+    <span class="eyebrow">QUICK START</span><h2 id="help-title">OWN YOUR HALF.</h2>
+    <ol class="rules"><li><span>01</span><div><strong>Grab your side.</strong><p>Drag anywhere in your half to guide your paddle. Each player gets an independent touch control.</p></div></li><li><span>02</span><div><strong>Find the angle.</strong><p>Strike the puck into the opposite goal. Bank it off the rails. Your paddle stays on your side of the center line.</p></div></li><li><span>03</span><div><strong>First to the finish.</strong><p>Reach the goal target to win. The player who conceded gets the next serve. A stalled puck gets a fresh drop.</p></div></li></ol>
+    <div class="help-tip"><strong>FACE TO FACE</strong><p>Put your device flat and sit at opposite ends. Both players see their own score the right way up. Turn your device to fit the table.</p></div>
+    <p class="keyboard-help"><strong>On a keyboard:</strong> Solo: arrows or WASD. Two players: coral uses WASD, mint uses arrows. Keys move in the screen’s direction. Space / Esc pauses.</p>
+    <form method="dialog"><button class="primary-button">GOT IT <span>↗</span></button></form>
+  </dialog>
+
+  <dialog id="pause-dialog" aria-labelledby="pause-title"><span class="eyebrow">TAKE A BREATHER</span><h2 id="pause-title">TIME OUT.</h2><p id="pause-reason">Your match is right where you left it.</p><button id="resume-button" class="primary-button">BACK TO IT <span>↗</span></button><div class="dialog-actions"><button id="restart-button" class="secondary-button">Restart match</button><button id="menu-button" class="secondary-button">Leave table</button></div><div class="utility-actions"><button class="text-button sound-button" aria-pressed="true">Sound on</button><button id="fullscreen-button" class="text-button">Full screen ↗</button></div></dialog>
+
+  <dialog id="result-dialog" aria-labelledby="result-title"><span class="eyebrow" id="result-kicker">MATCH POINT</span><h2 id="result-title">YOU WIN.</h2><div id="result-score" class="result-score">7 <span>—</span> 3</div><p id="result-detail">Good hands. Better angles.</p><button id="rematch-button" class="primary-button">ONE MORE GAME <span>↗</span></button><button id="result-menu-button" class="text-button">Back to the clubhouse</button></dialog>
+  <noscript><div class="noscript">Enable JavaScript to play FACE/OFF.</div></noscript>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

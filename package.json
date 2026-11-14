@@ -1,0 +1,13 @@
+{
+  "name": "face-off-air-hockey",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An arcade air hockey table for one or two players on one device.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
