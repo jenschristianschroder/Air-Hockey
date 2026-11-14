@@ -26,7 +26,7 @@
         <h1>FACE<span class="slash">/</span><br><span class="off">OFF</span><span class="title-dot">●</span></h1>
         <p class="tagline">Small screen.<br>Big rivalry.</p>
         <p class="intro">Beat the machine. Or settle it face to face.<br>Fast hands. Sharp angles. One more game.</p>
-        <button class="text-button" id="how-button">How to play <span aria-hidden="true">↗</span></button>
+        <button class="text-button" id="how-button">How to play <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="visual-label"><span>THE ORIGINAL SCREEN SPORT</span><span>01 / ∞</span></div>
@@ -40,7 +40,7 @@
           <div class="demo-puck"><i></i></div>
           <span class="table-corner corner-tl">+</span><span class="table-corner corner-br">+</span>
         </div>
-        <div class="visual-caption"><span><i class="color-dot green"></i> ONE OR TWO PLAYERS</span><span>NO DOWNLOAD. JUST PLAY. ↙</span></div>
+        <div class="visual-caption"><span><i class="color-dot green"></i> ONE OR TWO PLAYERS</span><span>NO DOWNLOAD. JUST PLAY.</span></div>
       </div>
     </section>
 
@@ -57,7 +57,7 @@
         <p id="local-hint" class="local-hint" hidden>Take opposite ends.<br>Your half. Your paddle.</p>
         <div class="setting-row"><span class="field-label">FIRST TO</span><div class="chips score-chips" role="group" aria-label="Goals to win"><button data-goals="5" aria-pressed="false">5</button><button data-goals="7" class="selected" aria-pressed="true">7</button><button data-goals="11" aria-pressed="false">11</button></div></div>
       </div>
-      <div class="launch-section"><button id="start-button" class="primary-button">DROP THE PUCK <span aria-hidden="true">↗</span></button><span class="launch-note">TOUCH, MOUSE OR KEYBOARD</span></div>
+      <div class="launch-section"><button id="start-button" class="primary-button">DROP THE PUCK <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button><span class="launch-note">TOUCH, MOUSE OR KEYBOARD</span></div>
     </section>
     <footer class="home-footer"><span>BUILT FOR A LITTLE FRIENDLY COMPETITION.</span><span>FULL-TIME FUN. ZERO OVERTIME.</span></footer>
   </main>
@@ -80,12 +80,12 @@
     <ol class="rules"><li><span>01</span><div><strong>Grab your side.</strong><p>Drag anywhere in your half to guide your paddle. Each player gets an independent touch control.</p></div></li><li><span>02</span><div><strong>Find the angle.</strong><p>Strike the puck into the opposite goal. Bank it off the rails. Your paddle stays on your side of the center line.</p></div></li><li><span>03</span><div><strong>First to the finish.</strong><p>Reach the goal target to win. The player who conceded gets the next serve. A stalled puck gets a fresh drop.</p></div></li></ol>
     <div class="help-tip"><strong>FACE TO FACE</strong><p>Put your device flat and sit at opposite ends. Both players see their own score the right way up. Turn your device to fit the table.</p></div>
     <p class="keyboard-help"><strong>On a keyboard:</strong> Solo: arrows or WASD. Two players: coral uses WASD, mint uses arrows. Keys move in the screen’s direction. Space / Esc pauses.</p>
-    <form method="dialog"><button class="primary-button">GOT IT <span>↗</span></button></form>
+    <form method="dialog"><button class="primary-button">GOT IT <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></form>
   </dialog>
 
-  <dialog id="pause-dialog" aria-labelledby="pause-title"><span class="eyebrow">TAKE A BREATHER</span><h2 id="pause-title">TIME OUT.</h2><p id="pause-reason">Your match is right where you left it.</p><button id="resume-button" class="primary-button">BACK TO IT <span>↗</span></button><div class="dialog-actions"><button id="restart-button" class="secondary-button">Restart match</button><button id="menu-button" class="secondary-button">Leave table</button></div><div class="utility-actions"><button class="text-button sound-button" aria-pressed="true">Sound on</button><button id="fullscreen-button" class="text-button">Full screen ↗</button></div></dialog>
+  <dialog id="pause-dialog" aria-labelledby="pause-title"><span class="eyebrow">TAKE A BREATHER</span><h2 id="pause-title">TIME OUT.</h2><p id="pause-reason">Your match is right where you left it.</p><button id="resume-button" class="primary-button">BACK TO IT <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button><div class="dialog-actions"><button id="restart-button" class="secondary-button">Restart match</button><button id="menu-button" class="secondary-button">Leave table</button></div><div class="utility-actions"><button class="text-button sound-button" aria-pressed="true">Sound on</button><button id="fullscreen-button" class="text-button">Full screen</button></div></dialog>
 
-  <dialog id="result-dialog" aria-labelledby="result-title"><span class="eyebrow" id="result-kicker">MATCH POINT</span><h2 id="result-title">YOU WIN.</h2><div id="result-score" class="result-score">7 <span>—</span> 3</div><p id="result-detail">Good hands. Better angles.</p><button id="rematch-button" class="primary-button">ONE MORE GAME <span>↗</span></button><button id="result-menu-button" class="text-button">Back to the clubhouse</button></dialog>
+  <dialog id="result-dialog" aria-labelledby="result-title"><span class="eyebrow" id="result-kicker">MATCH POINT</span><h2 id="result-title">YOU WIN.</h2><div id="result-score" class="result-score">7 <span>—</span> 3</div><p id="result-detail">Good hands. Better angles.</p><button id="rematch-button" class="primary-button">ONE MORE GAME <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button><button id="result-menu-button" class="text-button">Back to the clubhouse</button></dialog>
   <noscript><div class="noscript">Enable JavaScript to play FACE/OFF.</div></noscript>
   <script type="module" src="./game.js"></script>
 </body>

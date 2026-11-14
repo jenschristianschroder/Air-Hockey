@@ -103,6 +103,7 @@ function startMatch() {
   $('top-name').textContent = settings.mode === 'solo' ? 'THE MACHINE' : 'MINT / P2';
   $('bottom-name').textContent = settings.mode === 'solo' ? 'YOU / P1' : 'CORAL / P1';
   $('match-label').textContent = `FIRST TO ${settings.target}`;
+  $('game-announcer').textContent = `New ${settings.mode === 'solo' ? 'solo' : 'two-player'} match. First to ${settings.target}.`;
   rink.start(); syncScores(); drawFloor();
   canvas.focus({ preventScroll: true });
   void keepAwake();
@@ -153,11 +154,11 @@ $('fullscreen-button').addEventListener('click', async () => {
   try {
     if (document.fullscreenElement) await document.exitFullscreen();
     else await document.documentElement.requestFullscreen();
-    $('fullscreen-button').textContent = document.fullscreenElement ? 'Exit full screen ↙' : 'Full screen ↗';
+    $('fullscreen-button').textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen';
   } catch { $('fullscreen-button').textContent = 'Full screen unavailable'; }
 });
 document.addEventListener('fullscreenchange', () => {
-  $('fullscreen-button').textContent = document.fullscreenElement ? 'Exit full screen ↙' : 'Full screen ↗';
+  $('fullscreen-button').textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen';
 });
 window.addEventListener('blur', () => pause('Paused while you were away. Ready when you are.'));
 document.addEventListener('visibilitychange', () => { if (document.hidden) pause('Paused while you were away. Ready when you are.'); });
